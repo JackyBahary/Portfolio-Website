@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout'
+import Layout from './components/Layout';
+import Home from './components/Home';
 
-const App = () => {
+const App:FC = () => {
   return (
     <>
     <Routes>
-        <Route path="/" element={<Layout />}/>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home/>} />
+        </Route>
     </Routes>  
     </>
   );
