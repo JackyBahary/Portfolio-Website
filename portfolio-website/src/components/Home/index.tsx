@@ -3,6 +3,9 @@ import './index.scss';
 import LogoTitle  from '../../assets/images/logo-j.png';
 import { Link } from 'react-router-dom';
 import AnimatedLetters from "../AnimatedLetters";
+import Logo from './Logo';
+import { MutatingDots } from "react-loader-spinner";
+
 
 const Home:FC = () => { 
     const [letterClass, setLetterClass] = useState<string>('text-animate')
@@ -16,6 +19,7 @@ const Home:FC = () => {
       }, []);
 
     return (
+        <>
         <div className="container home-page">
             <div className="text-zone">
                 <h1>
@@ -37,7 +41,15 @@ const Home:FC = () => {
                 </h2>
                 <Link to="/contact" className="button">CONTACT ME</Link>
             </div>
+            <Logo></Logo>
         </div>
+        <MutatingDots 
+            color="#4F709C"
+            secondaryColor="#E5D283"
+            radius='12.5'
+            wrapperClass="loader"
+        />
+        </>
     )
 }
 
