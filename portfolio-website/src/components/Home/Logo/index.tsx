@@ -1,54 +1,12 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC, useRef } from 'react';
 import './index.scss';
 import LogoJ from '../../../assets/images/logo-j.png';
-import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin';
-import gsap from 'gsap-trial';
 
 const Logo:FC = () => {
 
     const bgRef = useRef<HTMLDivElement>(null);
     const outlineLogoRef = useRef<SVGPathElement>(null);
     const solidLogoRef = useRef<HTMLImageElement>(null);
-
-    useEffect(() => {
-       gsap.registerPlugin(DrawSVGPlugin)
-       
-       gsap.timeline()
-       .to(bgRef.current, {
-        duration: 1,
-        opacity: 1,
-       })
-
-       gsap.fromTo(
-            outlineLogoRef.current, {
-                drawSVG: "0%", 
-            }, {
-                duration: 20,
-                delay: 1,
-                drawSVG: "100%",
-            }
-       )
-
-       gsap.fromTo(
-        outlineLogoRef.current, { 
-            opacity: 1,
-        }, {
-            opacity: 0,
-            delay: 4,
-            duration: 4,
-        }
-   )
-
-       gsap.fromTo(
-            solidLogoRef.current, {
-                opacity: 0,
-            }, {
-                opacity: 1,
-                delay: 4,
-                duration: 3,
-            }
-       )
-    },[])
     
     return (
         <div className='logo-container' ref={bgRef}>

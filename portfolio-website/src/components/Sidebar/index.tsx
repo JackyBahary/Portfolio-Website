@@ -2,25 +2,25 @@ import './index.scss';
 import { Link, NavLink } from 'react-router-dom';
 import LogoS  from '../../assets/images/logo-j.png'
 import LogoSubtitle from '../../assets/images/logo_j_sub.png';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faHome, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FC } from 'react';
 
 const Sidebar:FC = () => (
     <div className='nav-bar'>
-        <Link className='logo' to='/'>
+        <Link className='logo' to='/Portfolio-Website'>
             <img src={LogoS} alt="logo"/>
             <img className="logo__sub" src={LogoSubtitle} alt="jacky"/>
         </Link>
         <nav>
-            <NavLink to="/">
+            <NavLink to="/Portfolio-Website">
                 <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
             </NavLink>
-            <NavLink className="about-link" to="/about">
+            <NavLink className="about-link" to="/Portfolio-Website/about">
                 <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
             </NavLink>
-            <NavLink className="contact-link" to="/contact">
+            <NavLink className="contact-link" to="/Portfolio-Website/contact">
                 <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
             </NavLink>
         </nav>
