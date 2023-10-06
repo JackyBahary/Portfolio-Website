@@ -3,6 +3,7 @@
     height: 100%;
     position: absolute;
 
+    &__contact,
     &__about {
         .text-zone {
             position: absolute;
@@ -36,7 +37,7 @@
                 }
         
                 &::after {
-                    content: '  </h1>';
+                    content: '</h1>';
                     font-family: 'La Belle Aurore', sans-serif;
                     color: #E5D283;
                     font-size: 18px;
@@ -49,16 +50,16 @@
             }
 
             p {
-                font-size: 13px;
+                font-size: 14px;
                 font-family: 'Helvetica Neue', sans-serif;
                 color: #F0F0F0;
                 font-weight: 300;
+                margin-top: 100px;
                 margin-left: 100px;
                 min-width: fit-content;
-                opacity: 0;
                 animation: 
-                1s forwards 1s fadeIn,
-                1s linear 1s pulse;
+                fadeIn 1s 1.8s backwards,
+                pulse 1s 1s;
 
                 &:nth-of-type(1) {
                     animation-delay: 2.1s;
@@ -70,6 +71,29 @@
 
                 &:nth-of-type(3) {
                     animation-delay: 2.3s;
+                }
+
+                &::before {
+                    content: '<p>';
+                    font-family: 'La Belle Aurore', sans-serif;
+                    color: #E5D283;
+                    font-size: 18px;
+                    position: absolute;
+                    margin-top: -40px;
+                    margin-left: -20px;
+                    opacity: 0.6;
+                }
+        
+                &::after {
+                    content: '</p>';
+                    font-family: 'La Belle Aurore', sans-serif;
+                    color: #E5D283;
+                    font-size: 18px;
+                    position: absolute;
+                    display: block;
+                    margin-top: 18px;
+                    margin-left: -20px;
+                    opacity: 0.6;
                 }
             }
         }
@@ -93,13 +117,15 @@
 
     &__top {
         bottom: auto;
-        top: 35px;
+        top: 25px;
         &--html {
             margin-left: -20px;
         }
     }
 
     &__bottom {
+        top: auto;
+        bottom: 20px;
         &--html {
             margin-left: -20px;
         }
